@@ -1,11 +1,23 @@
 # docker-example
 
 
+How Dockerfile work?
+=========
+
+You can easily build your own image
+
+    mkdir myImage
+    cd myImage
+    touch Dockerfile    # editer it with your host machine
+    touch app.py        # Your application which you expect to run as daminn
+    
+    docker build -t myImage .
+
 
 One liner to stop /remove all of Dockerntainers
 =====
 
-
+    
     docker stop $(docker ps -a -q)
     docker rm $(docker ps -a -q)
 
