@@ -30,3 +30,9 @@ Modify a image after pull
     sudo docker exec -i -t 98bf9ddc755f /bin/bash   # the id is above command result
     docker commit 98bf9ddc755f heygirl:part2x       # id is after your run above command will got!
     docker images                                   # Check current avaiable image on your machine
+
+To Check what we have modify on our container ?
+==========
+    
+    # docker diff container-id
+    docker diff 98bf9ddc755f
