@@ -36,3 +36,36 @@ To Check what we have modify on our container ?
     
     # docker diff container-id
     docker diff 98bf9ddc755f
+
+Run your new load-balanced app
+===========
+
+    docker swarm init
+    docker stack deploy -c docker-compose.yml getrestartlab
+    docker service ls
+    docker service ps getrestartlab_web
+    
+
+Check service logs
+===========
+    
+    # docker service logs service-id
+    docker service logs g2ztpyg2yanp
+
+
+Create VMs using docker-machine
+===========
+    
+
+    docker-machine create --driver virtualbox myvm1
+    docker-machine create --driver virtualbox myvm2
+
+    # Check you have create
+    docker-machine ls
+
+    # Here is example output from this command
+    docker-machine ls
+
+    # docker-machine ssh myvm1 "docker swarm init --advertise-addr <myvm1 ip>"
+    docker swarm join-token manager
+
